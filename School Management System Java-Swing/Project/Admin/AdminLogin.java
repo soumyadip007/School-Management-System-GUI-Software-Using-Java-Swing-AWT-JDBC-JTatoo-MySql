@@ -33,7 +33,7 @@ public class AdminLogin extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Login frame = new Login();
+					AdminLogin frame = new AdminLogin();
 					frame.setTitle("School Management System");
 					frame.setVisible(true);
 				} catch (Exception e) {
