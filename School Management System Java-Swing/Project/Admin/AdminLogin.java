@@ -106,13 +106,11 @@ public class AdminLogin extends JFrame {
 					System.out.println("add");
 					
 					Class.forName("com.mysql.jdbc.Driver");
-					//System.out.println("add");
+					
 					Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
-					//System.out.println("add");
 					
 					PreparedStatement st=(PreparedStatement) con.prepareStatement("Select user,pass from facult where user=? and pass=?");
-					//System.out.println("add");
-					//st.setString(7,city);
+					
 					st.setString(1,ustr);
 					st.setString(2,pstr);
 					ResultSet rs=st.executeQuery();
@@ -134,7 +132,7 @@ public class AdminLogin extends JFrame {
 				if(i==1)
 				{
 					dispose();
-					Home ah=new Home();
+					AdminHome ah=new AdminHome();
 					ah.setTitle("Book Hub");
 					ah.setVisible(true);
 					JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
