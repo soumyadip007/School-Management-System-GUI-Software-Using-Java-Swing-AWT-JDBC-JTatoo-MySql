@@ -10,7 +10,12 @@ import java.awt.Toolkit;
 
 import javax.swing.border.EmptyBorder;
 
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+
 import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
@@ -97,14 +102,41 @@ public class AdminLogin extends JFrame {
 				int i=0,j=0;
 				String ustr=textField.getText();
 				String pstr=passwordField.getText();
+				try{
+					System.out.println("add");
+					
+					Class.forName("com.mysql.jdbc.Driver");
+					//System.out.println("add");
+					Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
+					//System.out.println("add");
+					
+					PreparedStatement st=(PreparedStatement) con.prepareStatement("Select user,pass from facult where user=? and pass=?");
+					//System.out.println("add");
+					//st.setString(7,city);
+					st.setString(1,ustr);
+					st.setString(2,pstr);
+					ResultSet rs=st.executeQuery();
+					if(rs.next())
+					{
+					
+						i=1;
+					}
+					else{
+					
+						i=0;
+					}
+				}
+				catch(Exception w1)
+				{
+				System.out.println(w1);	
+				}
 				
-				
-				if( ustr.equals("1234") && pstr.equals("1234"))
+				if(i==1)
 				{
 					dispose();
-				//	AdminHost ah=new AdminHost();
-				//	ah.setTitle("Book Hub");
-				//	ah.setVisible(true);
+					Home ah=new Home();
+					ah.setTitle("Book Hub");
+					ah.setVisible(true);
 					JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
 				}
 				else
@@ -130,7 +162,7 @@ public class AdminLogin extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		label_1 = new JLabel("");
-		//label_1.setIcon(new ImageIcon("C:\\Users\\Soumyadeep\\Desktop\\Book Hub\\0.jpg"));
+		label_1.setIcon(new ImageIcon("C:\\Users\\Soumyadeep\\Desktop\\a11.jpg"));
 		label_1.setBounds(0, 0, 1008, 562);
 		contentPane.add(label_1);
 		
