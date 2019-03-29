@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
 import com.mysql.jdbc.Connection;
@@ -16,6 +17,7 @@ import com.mysql.jdbc.PreparedStatement;
 
 import javax.swing.JButton;
 import javax.swing.JTable;
+import javax.swing.JScrollBar;
 
 public class Home extends JFrame {
 
@@ -111,8 +113,16 @@ public class Home extends JFrame {
 			j=0;
 		}
 		table = new JTable(data1,columnNames);
-		table.setBounds(34, 36, 937, 324);
+		table.setBounds(12, 13, 937, 324);
 		contentPane.add(table);		
+		
+		//JScrollBar scrollBar = new JScrollBar(table);
+		//scrollBar.setBounds(12, 13, 69, 330);
+		//contentPane.add(scrollBar);
+	//	  table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+
+//	        JScrollPane pane = new JScrollPane(table);
+	//        add(pane, BorderLayout.CENTER);
 	}
 }
 

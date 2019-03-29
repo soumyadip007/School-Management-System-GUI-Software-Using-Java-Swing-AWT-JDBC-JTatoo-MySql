@@ -65,7 +65,7 @@ public class AdminLogin extends JFrame {
 		JLabel lblNewLabel = new JLabel("Admin Login");
 		lblNewLabel.setForeground(new Color(255, 255, 102));
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 46));
-		lblNewLabel.setBounds(364, 60, 273, 93);
+		lblNewLabel.setBounds(364, 13, 273, 93);
 		contentPane.add(lblNewLabel);
 		
 		textField = new JTextField();
@@ -80,13 +80,14 @@ public class AdminLogin extends JFrame {
 		contentPane.add(passwordField);
 		
 		JLabel lblUsername = new JLabel("Username");
-		lblUsername.setForeground(new Color(255, 255, 255));
+		lblUsername.setBackground(Color.BLACK);
+		lblUsername.setForeground(Color.BLACK);
 		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 31));
 		lblUsername.setBounds(250, 166, 193, 52);
 		contentPane.add(lblUsername);
 		
 		JLabel lblPassword = new JLabel("Password");
-		lblPassword.setForeground(new Color(255, 255, 255));
+		lblPassword.setForeground(Color.BLACK);
 		lblPassword.setBackground(Color.CYAN);
 		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 31));
 		lblPassword.setBounds(250, 286, 193, 52);
@@ -146,7 +147,7 @@ public class AdminLogin extends JFrame {
 	
 		contentPane.add(btnNewButton);
 		
-		btnNewButton_1 = new JButton("User Login");
+		btnNewButton_1 = new JButton("Student");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
@@ -163,9 +164,6 @@ public class AdminLogin extends JFrame {
 		label_1.setIcon(new ImageIcon("C:\\Users\\Soumyadeep\\Desktop\\a11.jpg"));
 		label_1.setBounds(0, 0, 1008, 562);
 		contentPane.add(label_1);
-		
-	
-
 	}
 
 }
