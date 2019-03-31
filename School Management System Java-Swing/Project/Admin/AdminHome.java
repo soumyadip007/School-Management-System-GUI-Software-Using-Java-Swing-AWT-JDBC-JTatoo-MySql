@@ -117,7 +117,7 @@ public class AdminHome extends JFrame {
 		btnNewButton.setBounds(899, 39, 97, 25);
 		contentPane.add(btnNewButton);
 		
-		JButton add = new JButton("Show");
+		JButton add = new JButton("Add student");
 		add.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -128,7 +128,7 @@ public class AdminHome extends JFrame {
 		add.setBounds(46, 197, 264, 118);
 		contentPane.add(add);
 		
-		JButton btnNewButton_1 = new JButton("Add Attendence %");
+		JButton btnNewButton_1 = new JButton("Add Attendence");
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -155,7 +155,7 @@ public class AdminHome extends JFrame {
 		button_1.setBounds(374, 366, 264, 118);
 		contentPane.add(button_1);
 		
-		JButton button_2 = new JButton("Add faculty");
+		JButton button_2 = new JButton("Show");
 		button_2.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -164,7 +164,7 @@ public class AdminHome extends JFrame {
 		button_2.setBounds(46, 366, 264, 118);
 		contentPane.add(button_2);
 		
-		JButton button_3 = new JButton("Manage Admin");
+		JButton button_3 = new JButton("Manage Faculty");
 		button_3.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -173,7 +173,7 @@ public class AdminHome extends JFrame {
 		button_3.setBounds(699, 366, 264, 118);
 		contentPane.add(button_3);
 		
-		JMenu mnNewMenu = new JMenu("New menu");
+		JMenu mnNewMenu = new JMenu("Search");
 		mnNewMenu.setBounds(0, 39, 58, -32);
 		contentPane.add(mnNewMenu);
 		
