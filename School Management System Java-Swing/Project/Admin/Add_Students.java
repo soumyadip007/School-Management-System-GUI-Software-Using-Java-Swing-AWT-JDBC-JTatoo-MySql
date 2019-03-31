@@ -177,6 +177,9 @@ public class Add_Students extends JFrame {
 		
 		JButton btnNewButton = new JButton("Add");
 		btnNewButton.addActionListener(new ActionListener() {
+			/* (non-Javadoc)
+			 * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
+			 */
 			public void actionPerformed(ActionEvent e) {
 				int a=JOptionPane.showConfirmDialog(btnNewButton,"Are you sure?");
 				//JOptionPane.setRootFrame(null);
@@ -215,7 +218,7 @@ public class Add_Students extends JFrame {
 						
 						Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
 						
-						PreparedStatement st=(PreparedStatement) con.prepareStatement("INSERT INTO stu(name,prt,gender,class,dob,section,teach,roll) values(?,?,?,?,?,?,?,?)");
+						PreparedStatement st=(PreparedStatement) con.prepareStatement("INSERT INTO stu(name,prt,gender,class,dob,section,teach,roll,pass) values(?,?,?,?,?,?,?,?,?)");
 						
 						st.setString(1, name);
 						st.setString(2, prnt);
@@ -225,7 +228,7 @@ public class Add_Students extends JFrame {
 						st.setString(6, sec);
 						st.setString(7, tch);
 						st.setString(8, rl);
-						
+						st.setString(9, "UEMK");
 						
 						int j=0;
 						j=st.executeUpdate();
