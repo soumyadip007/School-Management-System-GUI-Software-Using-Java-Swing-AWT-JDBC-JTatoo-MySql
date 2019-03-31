@@ -161,7 +161,7 @@ public class AdminLogin extends JFrame {
 		contentPane.add(btnNewButton_1);
 		
 		label_1 = new JLabel("");
-		label_1.setIcon(new ImageIcon("C:\\Users\\Soumyadeep\\Desktop\\a11.jpg"));
+	//	label_1.setIcon(new ImageIcon("C:\\Users\\Soumyadeep\\Desktop\\a11.jpg"));
 		label_1.setBounds(0, 0, 1008, 562);
 		contentPane.add(label_1);
 	}
