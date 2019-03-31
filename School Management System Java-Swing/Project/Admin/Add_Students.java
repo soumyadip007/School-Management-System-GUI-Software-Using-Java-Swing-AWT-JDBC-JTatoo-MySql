@@ -178,16 +178,28 @@ public class Add_Students extends JFrame {
 				if(a==JOptionPane.YES_OPTION){
 				
 					String name=stuname.getText();
-					String writer= partname.getText();
-					String  condition="Male";
-					String source=stuclass.getText();
-					String publisher=roll.getText();
-					String prc=teacher.getText();
+					String prnt= partname.getText();
+
+					String  condition;
+					if(rdbtnNewRadioButton.isSelected())
+					{
+						condition="Male";
+						
+					}
+					else if(rdbtnNewRadioButton_1.isSelected())
+					{
+						condition="Female";
+						
+					}
+					int i=1;
+					String cls=stuclass.getText();
+					String rl=roll.getText();
+					String tch=teacher.getText();
 					String dt=(String) date.getSelectedItem();
 					String mnth=(String) month.getSelectedItem();
 					String yr=(String) year.getSelectedItem();
 					
-					if(name != "" && writer != "" && source != null && prc != null && publisher != null)
+					if(i==1)
 					{
 						String n="\n";
 						
