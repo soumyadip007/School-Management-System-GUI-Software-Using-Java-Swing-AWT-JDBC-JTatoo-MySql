@@ -6,6 +6,8 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -17,6 +19,9 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
 
 public class Add_Students extends JFrame {
 
@@ -198,6 +203,34 @@ public class Add_Students extends JFrame {
 					String dt=(String) date.getSelectedItem();
 					String mnth=(String) month.getSelectedItem();
 					String yr=(String) year.getSelectedItem();
+					
+					
+					try{
+						System.out.println("add");
+						
+						Class.forName("com.mysql.jdbc.Driver");
+						
+						Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
+						
+						PreparedStatement st=(PreparedStatement) con.prepareStatement("");
+						
+						
+						ResultSet rs=st.executeQuery();
+						if(rs.next())
+						{
+						
+							i=1;
+						}
+						else{
+						
+							i=0;
+						}
+					}
+					catch(Exception w1)
+					{
+					System.out.println(w1);	
+					}
+					
 					
 					if(i==1)
 					{
