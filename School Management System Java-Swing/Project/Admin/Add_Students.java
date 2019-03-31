@@ -7,6 +7,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
@@ -51,49 +52,49 @@ public class Add_Students extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Book's name :- ");
+		JLabel lblNewLabel = new JLabel("Student Name");
 		lblNewLabel.setFont(new Font("Segoe UI", Font.PLAIN, 20));
 		lblNewLabel.setBounds(59, 25, 145, 32);
 		contentPane.add(lblNewLabel);
 		
-		JLabel label = new JLabel("Writer's name :- ");
-		label.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		label.setBounds(59, 101, 145, 32);
-		contentPane.add(label);
+		JLabel lblGurdiansName = new JLabel("Gurdian's Name");
+		lblGurdiansName.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		lblGurdiansName.setBounds(59, 101, 145, 32);
+		contentPane.add(lblGurdiansName);
 		
-		JLabel label_1 = new JLabel("Condition :- ");
-		label_1.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		label_1.setBounds(59, 184, 145, 32);
-		contentPane.add(label_1);
+		JLabel lblGender = new JLabel("Gender");
+		lblGender.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		lblGender.setBounds(59, 184, 145, 32);
+		contentPane.add(lblGender);
 		
-		JTextArea bkname = new JTextArea();
-		bkname.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		bkname.setBounds(235, 26, 166, 37);
-		contentPane.add(bkname);
+		JTextArea stuname = new JTextArea();
+		stuname.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		stuname.setBounds(235, 26, 166, 37);
+		contentPane.add(stuname);
 		
-		JTextArea wrtrname = new JTextArea();
-		wrtrname.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		wrtrname.setBounds(235, 102, 166, 37);
-		contentPane.add(wrtrname);
+		JTextArea partname = new JTextArea();
+		partname.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		partname.setBounds(235, 102, 166, 37);
+		contentPane.add(partname);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton(" Old");
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Male");
 		rdbtnNewRadioButton.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		rdbtnNewRadioButton.setSelected(false);
-		rdbtnNewRadioButton.setEnabled(false);
 		rdbtnNewRadioButton.setBounds(235, 172, 75, 32);
 		contentPane.add(rdbtnNewRadioButton);
 		
-		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton(" New");
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Female");
 		rdbtnNewRadioButton_1.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		rdbtnNewRadioButton_1.setSelected(true);
-		rdbtnNewRadioButton_1.setEnabled(false);
-		rdbtnNewRadioButton_1.setBounds(235, 213, 81, 26);
+		rdbtnNewRadioButton_1.setBounds(235, 213, 138, 26);
 		contentPane.add(rdbtnNewRadioButton_1);
+		ButtonGroup btg=new ButtonGroup();
+		btg.add(rdbtnNewRadioButton_1);
+		btg.add(rdbtnNewRadioButton);
 		
-		JLabel label_2 = new JLabel(" Published Date :- ");
-		label_2.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		label_2.setBounds(481, 25, 158, 32);
-		contentPane.add(label_2);
+		
+		JLabel lblDob = new JLabel("DD/MM/YYYY");
+		lblDob.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		lblDob.setBounds(481, 25, 158, 32);
+		contentPane.add(lblDob);
 		
 		JComboBox date = new JComboBox();
 		for(int i=1;i<=31;i++)
@@ -129,55 +130,45 @@ public class Add_Students extends JFrame {
 		year.setBounds(841, 32, 109, 27);
 		contentPane.add(year);
 		
-		JLabel label_3 = new JLabel(" Subject's name :- ");
-		label_3.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		label_3.setBounds(481, 184, 158, 32);
-		contentPane.add(label_3);
+		JLabel lblRollNo = new JLabel("Roll No.");
+		lblRollNo.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		lblRollNo.setBounds(481, 184, 158, 32);
+		contentPane.add(lblRollNo);
 		
-		JComboBox<String> sub = new JComboBox<String>();
-		sub.setBounds(662, 188, 166, 32);
-		sub.addItem("English");
-		sub.addItem("Hindi");
-		sub.addItem("Bengali");
-		sub.addItem("Maths");
-		sub.addItem("Physics");
-		sub.addItem("Chemistry");
-		sub.addItem("Biology");
-		sub.addItem("Computer");
-		sub.addItem("History");
-		sub.addItem("Geography");
-		sub.addItem("Others");
-		contentPane.add(sub);
+		JLabel lblClassTeacher = new JLabel("Class Teacher");
+		lblClassTeacher.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		lblClassTeacher.setBounds(481, 261, 145, 32);
+		contentPane.add(lblClassTeacher);
 		
-		JLabel label_4 = new JLabel(" Price (INR) :- ");
-		label_4.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		label_4.setBounds(481, 261, 145, 32);
-		contentPane.add(label_4);
+		JTextArea roll = new JTextArea();
+		roll.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		roll.setBounds(662, 185, 166, 37);
+		contentPane.add(roll);
 		
-		JTextArea publs = new JTextArea();
-		publs.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		publs.setBounds(662, 102, 166, 37);
-		contentPane.add(publs);
+		JLabel lblSection = new JLabel("Section ");
+		lblSection.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		lblSection.setBounds(481, 101, 169, 32);
+		contentPane.add(lblSection);
 		
-		JLabel label_5 = new JLabel(" Publisher name :- ");
-		label_5.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		label_5.setBounds(481, 101, 169, 32);
-		contentPane.add(label_5);
+		JTextArea teacher = new JTextArea();
+		teacher.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		teacher.setBounds(662, 262, 166, 37);
+		contentPane.add(teacher);
 		
-		JTextArea price = new JTextArea();
-		price.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		price.setBounds(662, 262, 166, 37);
-		contentPane.add(price);
+		JLabel lblClass = new JLabel("Class");
+		lblClass.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		lblClass.setBounds(59, 261, 145, 32);
+		contentPane.add(lblClass);
 		
-		JLabel label_6 = new JLabel("Source :- ");
-		label_6.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		label_6.setBounds(59, 261, 145, 32);
-		contentPane.add(label_6);
-		
-		JTextArea src = new JTextArea();
-		src.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-		src.setBounds(235, 262, 166, 37);
-		contentPane.add(src);
+		JTextArea stuclass = new JTextArea();
+		stuclass.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		stuclass.setBounds(235, 262, 166, 37);
+		contentPane.add(stuclass);
+
+		JTextArea section = new JTextArea();
+		section.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+		section.setBounds(662, 110, 166, 37);
+		contentPane.add(section);
 		
 		JButton btnNewButton = new JButton("Add");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -186,13 +177,12 @@ public class Add_Students extends JFrame {
 				//JOptionPane.setRootFrame(null);
 				if(a==JOptionPane.YES_OPTION){
 				
-					String name=bkname.getText();
-					String writer= wrtrname.getText();
-					String  condition="New";
-					String source=src.getText();
-					String publisher=publs.getText();
-					String subject= (String) sub.getSelectedItem();
-					String prc=price.getText();
+					String name=stuname.getText();
+					String writer= partname.getText();
+					String  condition="Male";
+					String source=stuclass.getText();
+					String publisher=roll.getText();
+					String prc=teacher.getText();
 					String dt=(String) date.getSelectedItem();
 					String mnth=(String) month.getSelectedItem();
 					String yr=(String) year.getSelectedItem();
@@ -216,5 +206,6 @@ public class Add_Students extends JFrame {
 		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 30));
 		btnNewButton.setBounds(376, 318, 197, 80);
 		contentPane.add(btnNewButton);
+		
 	}
 }
