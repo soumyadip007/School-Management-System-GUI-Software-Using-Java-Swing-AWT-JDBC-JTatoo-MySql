@@ -185,7 +185,7 @@ public class Add_Students extends JFrame {
 					String name=stuname.getText();
 					String prnt= partname.getText();
 
-					String  condition;
+					String  condition="";
 					if(rdbtnNewRadioButton.isSelected())
 					{
 						condition="Male";
@@ -200,11 +200,14 @@ public class Add_Students extends JFrame {
 					String cls=stuclass.getText();
 					String rl=roll.getText();
 					String tch=teacher.getText();
+					String sec=section.getText();
+					
+					
 					String dt=(String) date.getSelectedItem();
 					String mnth=(String) month.getSelectedItem();
 					String yr=(String) year.getSelectedItem();
 					
-					
+					String date=dt+"/"+mnth+"/"+yr;
 					try{
 						System.out.println("add");
 						
@@ -212,19 +215,21 @@ public class Add_Students extends JFrame {
 						
 						Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
 						
-						PreparedStatement st=(PreparedStatement) con.prepareStatement("");
+						PreparedStatement st=(PreparedStatement) con.prepareStatement("INSERT INTO stu(name,prt,gender,class,dob,section,teach,roll) values(?,?,?,?,?,?,?,?)");
+						
+						st.setString(1, name);
+						st.setString(2, prnt);
+						st.setString(3, condition);
+						st.setString(4, cls);
+						st.setString(5, date);
+						st.setString(6, sec);
+						st.setString(7, tch);
+						st.setString(8, rl);
 						
 						
-						ResultSet rs=st.executeQuery();
-						if(rs.next())
-						{
+						int j=0;
+						j=st.executeUpdate();
 						
-							i=1;
-						}
-						else{
-						
-							i=0;
-						}
 					}
 					catch(Exception w1)
 					{
