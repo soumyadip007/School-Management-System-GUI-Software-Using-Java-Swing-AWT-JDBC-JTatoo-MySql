@@ -47,7 +47,7 @@ public class Home extends JFrame {
 	 */
 	public Home() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(450, 190, 1014, 597);
+		setBounds(450, 319, 1014, 460);
 		setResizable(false);
 		
 		contentPane = new JPanel();
@@ -63,8 +63,14 @@ public class Home extends JFrame {
 		 int i=0,j=0;
 		 List li1=new List();
 		 List li2=new List();
+		 List li3=new List();
+		 List li4=new List();
+		 List li5=new List();
+		 List li6=new List();
+		 List li7=new List();
+		 List li8=new List();
 		        // Column Names 
-		        String[] columnNames = { "Name",  "Department" }; 
+		        String[] columnNames = { "Name",  "Department",  "Department"}; 
 		  
 		        // Initializing the JTable 
 		      
@@ -74,10 +80,10 @@ public class Home extends JFrame {
 			
 			Class.forName("com.mysql.jdbc.Driver");
 			//System.out.println("add");
-			Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/cl","root","");
+			Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
 			//System.out.println("add");
 			
-			PreparedStatement st=(PreparedStatement) con.prepareStatement("Select name,venue from event");
+			PreparedStatement st=(PreparedStatement) con.prepareStatement("Select name,class,section from stu");
 			//System.out.println("add");
 			//st.setString(7,city);
 			
@@ -95,6 +101,8 @@ public class Home extends JFrame {
 				li1.add(rs.getString(1));
 				i++;
 				li2.add(rs.getString(2));
+				i++;
+				li2.add(rs.getString(2));
 			}
 		}
 		catch(Exception e)
@@ -110,10 +118,12 @@ public class Home extends JFrame {
 			data1[k][j]=li1.getItem(k);
 			j++;
 			data1[k][j]=li2.getItem(k);
+			j++;
+			data1[k][j]=li2.getItem(k);
 			j=0;
 		}
 		table = new JTable(data1,columnNames);
-		table.setBounds(12, 13, 937, 324);
+		table.setBounds(12, 13, 1014, 460); 
 		contentPane.add(table);		
 		
 		//JScrollBar scrollBar = new JScrollBar(table);
