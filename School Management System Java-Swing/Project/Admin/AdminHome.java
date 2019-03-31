@@ -121,14 +121,14 @@ public class AdminHome extends JFrame {
 		add.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		add.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Home obj=new Home();
+				Add_Students obj=new Add_Students();
 				obj.setVisible(true);
 			}
 		});
 		add.setBounds(46, 197, 264, 118);
 		contentPane.add(add);
 		
-		JButton btnNewButton_1 = new JButton("Add Attendence");
+		JButton btnNewButton_1 = new JButton("Add Marks");
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -143,8 +143,7 @@ public class AdminHome extends JFrame {
 		button.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			//	Show_bookings obj=new Show_bookings();
-				//obj.setVisible(true);
+				
 			}
 		});
 		button.setBounds(699, 197, 264, 118);
