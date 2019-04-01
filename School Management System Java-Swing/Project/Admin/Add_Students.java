@@ -224,11 +224,9 @@ public class Add_Students extends JFrame {
 						st.setString(2, prnt);
 						st.setString(3, condition);
 						st.setString(4, cls);
-						st.setString(5, date);
 						st.setString(6, sec);
 						st.setString(7, tch);
 						st.setString(8, rl);
-						st.setString(9, "UEMK");
 						
 						int j=0;
 						j=st.executeUpdate();
@@ -245,7 +243,7 @@ public class Add_Students extends JFrame {
 						String n="\n";
 						
 						
-						JOptionPane.showMessageDialog(btnNewButton,"Congratulations,"+n+"Book is added sucessfully"+n+"Thankyou.");
+						JOptionPane.showMessageDialog(btnNewButton,"Congratulations,"+n+"Student is added sucessfully"+n+"Thankyou.");
 					}
 					else
 					{
