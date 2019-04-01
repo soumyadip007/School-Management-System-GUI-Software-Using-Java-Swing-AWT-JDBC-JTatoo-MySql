@@ -137,7 +137,7 @@ public class UserLogin extends JFrame {
 				if(i==1)
 				{
 					dispose();
-					UserHome ah=new UserHome();
+					UserHome ah=new UserHome(ustr);
 					ah.setTitle("Student-Home");
 					ah.setVisible(true);
 					JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
