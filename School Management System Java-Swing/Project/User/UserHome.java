@@ -20,6 +20,7 @@ import javax.swing.border.EmptyBorder;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
+import Admin.AdminLogin;
 import Admin.AdminSearch;
 import java.awt.Color;
 import javax.swing.AbstractAction;
@@ -210,6 +211,14 @@ public class UserHome extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
+				int a=JOptionPane.showConfirmDialog(btnNewButton,"Are you sure?");
+				//JOptionPane.setRootFrame(null);
+				if(a==JOptionPane.YES_OPTION){
+					dispose();
+					UserLogin obj=new UserLogin();
+					obj.setTitle("Student-Login");
+					obj.setVisible(true);
+				}
 				dispose();
 				UserLogin obj=new UserLogin();
 				obj.setVisible(true);
