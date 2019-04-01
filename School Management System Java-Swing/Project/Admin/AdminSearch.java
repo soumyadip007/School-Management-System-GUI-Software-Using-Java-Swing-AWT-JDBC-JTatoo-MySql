@@ -79,6 +79,9 @@ public class AdminSearch extends JFrame {
 		partname.setBounds(235, 102, 166, 37);
 		partname.setText(prt1);
 		contentPane.add(partname);
+		partname.setEditable(false);
+		
+		
 		ButtonGroup btg=new ButtonGroup();
 		
 		
