@@ -69,8 +69,8 @@ public class AdminHome extends JFrame {
 		JMenuItem mntmAddOldBooks = new JMenuItem("Add Student");
 		mntmAddOldBooks.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-	//			Add_old_books obj=new Add_old_books();
-		//		obj.setVisible(true);
+				Add_Students obj=new Add_Students();
+				obj.setVisible(true);
 			}
 		});
 		mnNewMenu_1.add(mntmAddOldBooks);
@@ -78,8 +78,8 @@ public class AdminHome extends JFrame {
 		JMenuItem mntmAddNewBooks = new JMenuItem("Add Marks");
 		mntmAddNewBooks.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-		//	Add_new_books obj=new Add_new_books();
-			//obj.setVisible(true);
+			aa obj=new aa();
+			obj.setVisible(true);
 		}
 	});
 		mnNewMenu_1.add(mntmAddNewBooks);
