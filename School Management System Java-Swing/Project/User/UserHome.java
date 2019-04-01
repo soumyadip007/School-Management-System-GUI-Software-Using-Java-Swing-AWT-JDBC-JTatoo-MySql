@@ -12,6 +12,9 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -20,6 +23,7 @@ import javax.swing.border.EmptyBorder;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
+import Admin.Add_Students;
 import Admin.AdminLogin;
 import Admin.AdminSearch;
 import java.awt.Color;
@@ -69,6 +73,41 @@ public class UserHome extends JFrame {
 		String roll1 = null;
 		String marks1 = null;
 		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 1008, 26);
+		JMenu mnNewMenu_1 = new JMenu("Settings");
+		menuBar.add(mnNewMenu_1);
+
+		JMenuItem mntmAddOldBooks = new JMenuItem("Change Password");
+		mntmAddOldBooks.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			///	Add_Students obj=new Add_Students();
+			//	/obj.setVisible(true);
+			}
+		});
+		mnNewMenu_1.add(mntmAddOldBooks);
+		
+
+		JMenuItem mmm = new JMenuItem("Logout");
+		mntmAddOldBooks.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				int a=JOptionPane.showConfirmDialog(mntmAddOldBooks,"Are you sure?");
+				//JOptionPane.setRootFrame(null);
+				if(a==JOptionPane.YES_OPTION){
+					dispose();
+					UserLogin obj=new UserLogin();
+					obj.setTitle("Student-Login");
+					obj.setVisible(true);
+				}
+				dispose();
+				UserLogin obj=new UserLogin();
+				obj.setVisible(true);
+			}
+		});
+		mnNewMenu_1.add(mmm);
+		
+		
+		contentPane.add(menuBar);
 		try{
 			System.out.println("add");
 			
@@ -108,24 +147,24 @@ public class UserHome extends JFrame {
 		JLabel lblNewLabel = new JLabel("My Name");
 		lblNewLabel.setBackground(new Color(240, 240, 240));
 		lblNewLabel.setFont(new Font("Segoe UI", Font.PLAIN, 27));
-		lblNewLabel.setBounds(35, 25, 249, 49);
+		lblNewLabel.setBounds(35, 46, 249, 49);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblGurdiansName = new JLabel("Gurdian's Name");
 		lblGurdiansName.setFont(new Font("Segoe UI", Font.PLAIN, 27));
-		lblGurdiansName.setBounds(35, 136, 188, 32);
+		lblGurdiansName.setBounds(35, 149, 222, 32);
 		contentPane.add(lblGurdiansName);
 		
 		JTextArea stuname = new JTextArea();
 		stuname.setFont(new Font("Segoe UI", Font.PLAIN, 27));
-		stuname.setBounds(235, 25, 561, 48);
+		stuname.setBounds(235, 50, 561, 48);
 		contentPane.add(stuname);
 		stuname.setText(name1);
 		stuname.setEditable(false);
 		
 		JTextArea partname = new JTextArea();
 		partname.setFont(new Font("Segoe UI", Font.PLAIN, 27));
-		partname.setBounds(235, 119, 255, 62);
+		partname.setBounds(235, 132, 255, 62);
 		partname.setText(prt1);
 		contentPane.add(partname);
 		partname.setEditable(false);
@@ -136,7 +175,7 @@ public class UserHome extends JFrame {
 		
 		JLabel lblDob = new JLabel("DOB");
 		lblDob.setFont(new Font("Segoe UI", Font.PLAIN, 27));
-		lblDob.setBounds(570, 137, 158, 32);
+		lblDob.setBounds(570, 149, 158, 32);
 		contentPane.add(lblDob);
 		
 		
@@ -175,7 +214,7 @@ public class UserHome extends JFrame {
 		
 		JTextArea stuclass = new JTextArea();
 		stuclass.setFont(new Font("Segoe UI", Font.PLAIN, 27));
-		stuclass.setBounds(235, 232, 255, 63);
+		stuclass.setBounds(235, 237, 255, 63);
 		contentPane.add(stuclass);
 		stuclass.setText(class1);
 		stuclass.setEditable(false);
@@ -190,7 +229,7 @@ public class UserHome extends JFrame {
 
 		JTextArea dob = new JTextArea();
 		dob.setFont(new Font("Segoe UI", Font.PLAIN, 27));
-		dob.setBounds(684, 119, 255, 62);
+		dob.setBounds(684, 136, 255, 62);
 		contentPane.add(dob);
 		dob.setText(dob1);
 		dob.setEditable(false);
@@ -202,12 +241,13 @@ public class UserHome extends JFrame {
 		
 		JTextArea marks = new JTextArea();
 		marks.setFont(new Font("Segoe UI", Font.PLAIN, 27));
-		marks.setBounds(430, 465, 237, 54);
+		marks.setBounds(436, 465, 237, 54);
 		contentPane.add(marks);
 		marks.setText(marks1);
 		marks.setEditable(false);
 		
 		JButton btnNewButton = new JButton("Logout\r\n");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 21));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -225,7 +265,7 @@ public class UserHome extends JFrame {
 						
 			}
 		});
-		btnNewButton.setBounds(854, 25, 126, 32);
+		btnNewButton.setBounds(852, 57, 126, 40);
 		contentPane.add(btnNewButton);
 		
 		
