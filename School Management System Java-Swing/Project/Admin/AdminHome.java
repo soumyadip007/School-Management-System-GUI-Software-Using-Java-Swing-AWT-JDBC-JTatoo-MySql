@@ -84,29 +84,18 @@ public class AdminHome extends JFrame {
 	});
 		mnNewMenu_1.add(mntmAddNewBooks);
 		
-		JMenu menu = new JMenu("Add Attendence %");
-		menuBar.add(menu);
+		JMenu mnSettings = new JMenu("Settings");
+		menuBar.add(mnSettings);
+		
+		JMenu mnNewMenu_3 = new JMenu("Adminstration");
+		mnSettings.add(mnNewMenu_3);
 		
 		
+		JMenuItem mntmAddFaculty = new JMenuItem("Add Faculty");
+		mnNewMenu_3.add(mntmAddFaculty);
 		
-		JMenu mnNewMenu_2 = new JMenu("All Students");
-		menu.add(mnNewMenu_2);
-		
-		JMenuItem menuItem1 = new JMenuItem("All Faculty");
-		mnNewMenu_2.add(menuItem1);
-		
-		JMenuItem menuItem2 = new JMenuItem("Manage ");
-		mnNewMenu_2.add(menuItem2);
-		
-		JMenu mnNewMenu_3 = new JMenu("Add Faculty");
-		menu.add(mnNewMenu_3);
-		
-		
-		JMenuItem menuItem_1 = new JMenuItem("Add Attendence %");
-		mnNewMenu_3.add(menuItem_1);
-		
-		JMenuItem menuItem_2 = new JMenuItem("All Students");
-		mnNewMenu_3.add(menuItem_2);
+		JMenuItem mntmManageFaculty = new JMenuItem("Manage Faculty");
+		mnNewMenu_3.add(mntmManageFaculty);
 		
 		JButton btnNewButton = new JButton("Log Out");
 		btnNewButton.addActionListener(new ActionListener() {
@@ -116,9 +105,9 @@ public class AdminHome extends JFrame {
 				if(a==JOptionPane.YES_OPTION){
 						
 				dispose();
-				//Main_screen ms=new Main_screen();
-				//ms.setTitle("Book Hub");
-				//ms.setVisible(true);
+				AdminLogin ms=new AdminLogin();
+				ms.setTitle("Faculty Login");
+				ms.setVisible(true);
 				}
 			}
 		});
@@ -140,8 +129,8 @@ public class AdminHome extends JFrame {
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-		//		Add_new_books obj=new Add_new_books();
-			//	obj.setVisible(true);
+				aa obj=new aa();
+				obj.setVisible(true);
 			}
 		});
 		btnNewButton_1.setBounds(374, 197,264, 118);
@@ -155,33 +144,30 @@ public class AdminHome extends JFrame {
 				obj.setVisible(true);
 			}
 		});
-		button.setBounds(699, 197, 264, 118);
+		button.setBounds(693, 197, 264, 118);
 		contentPane.add(button);
 		
-		JButton button_1 = new JButton("Add Marks");
-		button_1.setFont(new Font("Tahoma", Font.PLAIN, 29));
-		button_1.setBounds(374, 366, 264, 118);
-		contentPane.add(button_1);
-		
-		JButton button_2 = new JButton("Show");
-		button_2.setFont(new Font("Tahoma", Font.PLAIN, 29));
-		button_2.addActionListener(new ActionListener() {
+		JButton btnAlter = new JButton("Update Student");
+		btnAlter.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				aa obj=new aa();
+				obj.setVisible(true);
 			}
 		});
-		button_2.setBounds(46, 366, 264, 118);
-		contentPane.add(button_2);
+		btnAlter.setFont(new Font("Tahoma", Font.PLAIN, 29));
+		btnAlter.setBounds(183, 366, 264, 118);
+		contentPane.add(btnAlter);
 		
-		JButton button_3 = new JButton("Manage Faculty");
-		button_3.setFont(new Font("Tahoma", Font.PLAIN, 29));
-		button_3.addActionListener(new ActionListener() {
+		JButton btnAddFaculty = new JButton("Add Faculty");
+		btnAddFaculty.setFont(new Font("Tahoma", Font.PLAIN, 29));
+		btnAddFaculty.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Add_faculty obj=new Add_faculty();
 				obj.setVisible(true);
 			}
 		});
-		button_3.setBounds(699, 366, 264, 118);
-		contentPane.add(button_3);
+		btnAddFaculty.setBounds(528, 366, 264, 118);
+		contentPane.add(btnAddFaculty);
 		
 		JMenu mnNewMenu = new JMenu("Search");
 		mnNewMenu.setBounds(0, 39, 58, -32);
