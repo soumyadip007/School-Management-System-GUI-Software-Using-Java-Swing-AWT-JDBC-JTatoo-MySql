@@ -29,6 +29,7 @@ import Admin.AdminSearch;
 import java.awt.Color;
 import javax.swing.AbstractAction;
 import javax.swing.Action;
+import javax.swing.UIManager;
 
 public class UserHome extends JFrame {
 
@@ -81,6 +82,7 @@ public class UserHome extends JFrame {
 		JMenuItem mntmAddOldBooks = new JMenuItem("Change Password");
 		mntmAddOldBooks.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			///	Add_Students obj=new Add_Students();
 			//	/obj.setVisible(true);
 			}
@@ -246,8 +248,9 @@ public class UserHome extends JFrame {
 		marks.setText(marks1);
 		marks.setEditable(false);
 		
-		JButton btnNewButton = new JButton("Logout\r\n");
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 21));
+		JButton btnNewButton = new JButton("Logout");
+		btnNewButton.setBackground(UIManager.getColor("Button.disabledForeground"));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -265,8 +268,22 @@ public class UserHome extends JFrame {
 						
 			}
 		});
-		btnNewButton.setBounds(852, 57, 126, 40);
+		btnNewButton.setBounds(808, 39, 175, 26);
 		contentPane.add(btnNewButton);
+		final String a=name1;
+		JButton button = new JButton("Change-password\r\n");
+		button.setBackground(UIManager.getColor("Button.disabledForeground"));
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Change bo=new Change(a);
+				bo.setTitle("Change Password");
+				bo.setVisible(true);
+						
+			}
+		});
+		button.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		button.setBounds(808, 69, 175, 32);
+		contentPane.add(button);
 		
 		
 	}
