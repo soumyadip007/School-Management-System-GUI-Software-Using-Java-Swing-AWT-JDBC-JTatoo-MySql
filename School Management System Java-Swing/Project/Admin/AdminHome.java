@@ -186,7 +186,7 @@ public class AdminHome extends JFrame {
 		
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setFont(new Font("Monospaced", Font.PLAIN, 35));
+		textArea.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		textArea.setBounds(65, 69, 587, 68);
 		contentPane.add(textArea);
 		
@@ -207,7 +207,7 @@ public class AdminHome extends JFrame {
 					
 					Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
 					
-					PreparedStatement st=(PreparedStatement) con.prepareStatement("Select name,prt,gender,class,dob,section,teach,roll section from stu where name=?");
+					PreparedStatement st=(PreparedStatement) con.prepareStatement("Select name,prt,gender,class,dob,section,teach,roll,marks section from stu where name=?");
 					int i;
 					
 					st.setString(1,pstr);
@@ -215,8 +215,9 @@ public class AdminHome extends JFrame {
 					if(rs.next())
 					{
 						
-						AdminSearch obj=new AdminSearch(rs.getString(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8));
+						AdminSearch obj=new AdminSearch(rs.getString(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(8),rs.getString(9));
 						obj.setVisible(true);
+					
 					}
 					else{
 						JOptionPane.showMessageDialog(btnNewButton,"Sorry, Record Not Found");
