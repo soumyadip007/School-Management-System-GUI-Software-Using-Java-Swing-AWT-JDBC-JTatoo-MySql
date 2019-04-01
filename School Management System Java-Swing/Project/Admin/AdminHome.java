@@ -151,7 +151,8 @@ public class AdminHome extends JFrame {
 		button.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				Home obj=new Home();
+				obj.setVisible(true);
 			}
 		});
 		button.setBounds(699, 197, 264, 118);
@@ -175,6 +176,8 @@ public class AdminHome extends JFrame {
 		button_3.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Add_faculty obj=new Add_faculty();
+				obj.setVisible(true);
 			}
 		});
 		button_3.setBounds(699, 366, 264, 118);

@@ -13,6 +13,8 @@ import javax.swing.border.EmptyBorder;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
+import User.UserLogin;
+
 import java.awt.event.ActionListener;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -62,8 +64,8 @@ public class AdminLogin extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Admin Login");
-		lblNewLabel.setForeground(new Color(255, 255, 102));
+		JLabel lblNewLabel = new JLabel("Faculty Login");
+		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setFont(new Font("Times New Roman", Font.PLAIN, 46));
 		lblNewLabel.setBounds(364, 13, 273, 93);
 		contentPane.add(lblNewLabel);
@@ -151,9 +153,9 @@ public class AdminLogin extends JFrame {
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
-				//Userlogin us=new Userlogin();
-				//us.setTitle("Book Hub");
-				//us.setVisible(true);
+				UserLogin us=new UserLogin();
+				us.setTitle("Student-Login");
+				us.setVisible(true);
 			}
 		});
 		btnNewButton_1.setFont(new Font("Tahoma", Font.PLAIN, 26));
