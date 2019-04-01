@@ -6,6 +6,8 @@ import java.awt.Font;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -17,10 +19,15 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.PreparedStatement;
+
 import javax.swing.JTextArea;
 public class AdminHome extends JFrame {
 
 	private JPanel contentPane;
+	private JFrame jf;
 
 	/**
 	 * Launch the application.
@@ -182,9 +189,72 @@ public class AdminHome extends JFrame {
 		textArea.setBounds(65, 69, 587, 68);
 		contentPane.add(textArea);
 		
-		JButton btnNewButton_2 = new JButton("New button");
+		JButton btnNewButton_2 = new JButton("Search");
+		btnNewButton_2.setFont(new Font("Tahoma", Font.PLAIN, 29));
 		btnNewButton_2.setBounds(688, 68, 148, 69);
 		contentPane.add(btnNewButton_2);
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				
+				
+				String pstr=textArea.getText();
+				try{
+					System.out.println("add");
+					
+					Class.forName("com.mysql.jdbc.Driver");
+					
+					Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
+					
+					PreparedStatement st=(PreparedStatement) con.prepareStatement("Select * from stu where name=? ");
+					int i;
+					
+					st.setString(1,pstr);
+					ResultSet rs=st.executeQuery();
+					if(rs.next())
+					{
+						jf=new JFrame();
+						jf.setVisible(true);
+						jf.setBounds(450, 319, 1014, 460);
+						jf.setResizable(false);
+
+						JLabel lblGurdiansName = new JLabel("Gurdian's Name");
+						lblGurdiansName.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+						lblGurdiansName.setBounds(59, 101, 145, 32);
+						contentPane.add(lblGurdiansName);
+						
+						JLabel lblGender = new JLabel("Gender");
+						lblGender.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+						lblGender.setBounds(59, 184, 145, 32);
+						contentPane.add(lblGender);
+						
+						JTextArea stuname = new JTextArea();
+						stuname.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+						stuname.setBounds(235, 26, 166, 37);
+						contentPane.add(stuname);
+						
+						JTextArea partname = new JTextArea();
+						partname.setFont(new Font("Segoe UI", Font.PLAIN, 20));
+						partname.setBounds(235, 102, 166, 37);
+						contentPane.add(partname);
+						
+					}
+					else{
+					
+						i=0;
+					}
+					
+					
+					
+					
+				}
+				catch(Exception w1)
+				{
+				System.out.println(w1);	
+				}
+				
+			}
+		});
 		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon("C:\\Users\\Soumyadeep\\Desktop\\Book Hub\\why-you-should-read-and-re-read-these-high-school-books-as-an-adult (Custom).jpeg"));
