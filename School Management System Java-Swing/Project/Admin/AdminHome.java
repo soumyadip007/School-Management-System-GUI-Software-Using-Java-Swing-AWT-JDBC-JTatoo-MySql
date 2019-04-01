@@ -186,6 +186,7 @@ public class AdminHome extends JFrame {
 		
 		
 		JTextArea textArea = new JTextArea();
+		textArea.setFont(new Font("Monospaced", Font.PLAIN, 35));
 		textArea.setBounds(65, 69, 587, 68);
 		contentPane.add(textArea);
 		
@@ -206,41 +207,19 @@ public class AdminHome extends JFrame {
 					
 					Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
 					
-					PreparedStatement st=(PreparedStatement) con.prepareStatement("Select * from stu where name=? ");
+					PreparedStatement st=(PreparedStatement) con.prepareStatement("Select name,prt,gender,class,dob,section,teach,roll,pass section from stu where name=?");
 					int i;
 					
 					st.setString(1,pstr);
 					ResultSet rs=st.executeQuery();
 					if(rs.next())
 					{
-						jf=new JFrame();
-						jf.setVisible(true);
-						jf.setBounds(450, 319, 1014, 460);
-						jf.setResizable(false);
-
-						JLabel lblGurdiansName = new JLabel("Gurdian's Name");
-						lblGurdiansName.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-						lblGurdiansName.setBounds(59, 101, 145, 32);
-						contentPane.add(lblGurdiansName);
 						
-						JLabel lblGender = new JLabel("Gender");
-						lblGender.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-						lblGender.setBounds(59, 184, 145, 32);
-						contentPane.add(lblGender);
-						
-						JTextArea stuname = new JTextArea();
-						stuname.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-						stuname.setBounds(235, 26, 166, 37);
-						contentPane.add(stuname);
-						
-						JTextArea partname = new JTextArea();
-						partname.setFont(new Font("Segoe UI", Font.PLAIN, 20));
-						partname.setBounds(235, 102, 166, 37);
-						contentPane.add(partname);
-						
+						AdminSearch obj=new AdminSearch(rs.getString(1), rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getString(9));
+						obj.setVisible(true);
 					}
 					else{
-					
+						JOptionPane.showMessageDialog(btnNewButton,"Sorry, Record Not Found");
 						i=0;
 					}
 					
