@@ -17,6 +17,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTextArea;
 public class AdminHome extends JFrame {
 
 	private JPanel contentPane;
@@ -176,9 +177,21 @@ public class AdminHome extends JFrame {
 		mnNewMenu.setBounds(0, 39, 58, -32);
 		contentPane.add(mnNewMenu);
 		
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBounds(65, 69, 587, 68);
+		contentPane.add(textArea);
+		
+		JButton btnNewButton_2 = new JButton("New button");
+		btnNewButton_2.setBounds(688, 68, 148, 69);
+		contentPane.add(btnNewButton_2);
+		
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon("C:\\Users\\Soumyadeep\\Desktop\\Book Hub\\why-you-should-read-and-re-read-these-high-school-books-as-an-adult (Custom).jpeg"));
 		label.setBounds(0, 26, 1008, 536);
 		contentPane.add(label);
+		
+		
+	
 	}
 }
