@@ -46,7 +46,7 @@ public class Home extends JFrame {
 	 * Create the frame.
 	 */
 	public Home() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	//	setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(450, 319, 1014, 460);
 		setResizable(false);
 		
