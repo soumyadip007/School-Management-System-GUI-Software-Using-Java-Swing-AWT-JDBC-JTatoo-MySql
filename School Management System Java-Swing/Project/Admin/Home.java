@@ -83,15 +83,15 @@ public class Home extends JFrame {
 			Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
 			//System.out.println("add");
 			
-			PreparedStatement st=(PreparedStatement) con.prepareStatement("Select name,class from stu");
+			PreparedStatement st=(PreparedStatement) con.prepareStatement("Select name,class,section,roll,teach from stu");
 			//System.out.println("add");
 			//st.setString(7,city);
 			
 			ResultSet rs=st.executeQuery();
 			
-			li1.add("Name");
+			li1.add("|-----|Name|-----|");
 		
-			li2.add("Class");
+			li2.add("|-----|Class-Section-Roll-Teach|-----|");
 			
 			while(rs.next())
 			{
@@ -102,7 +102,7 @@ public class Home extends JFrame {
 				i++;*/
 				li1.add(rs.getString(1));
 				i++;
-				li2.add(rs.getString(2));
+				li2.add(rs.getString(2)+"-"+rs.getString(3)+"-"+rs.getString(4)+"-"+rs.getString(5));
 				
 			}
 		}
