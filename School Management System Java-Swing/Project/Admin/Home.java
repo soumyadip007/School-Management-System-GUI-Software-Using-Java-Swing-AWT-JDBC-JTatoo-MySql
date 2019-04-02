@@ -70,7 +70,7 @@ public class Home extends JFrame {
 		 List li7=new List();
 		 List li8=new List();
 		        // Column Names 
-		        String[] columnNames = { "Name",  "Department",  "Department"}; 
+		        String[] columnNames = { "Name",  "Department", }; 
 		  
 		        // Initializing the JTable 
 		      
@@ -83,13 +83,15 @@ public class Home extends JFrame {
 			Connection con=(Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/school","root","");
 			//System.out.println("add");
 			
-			PreparedStatement st=(PreparedStatement) con.prepareStatement("Select name,class,section from stu");
+			PreparedStatement st=(PreparedStatement) con.prepareStatement("Select name,class from stu");
 			//System.out.println("add");
 			//st.setString(7,city);
 			
 			ResultSet rs=st.executeQuery();
 			
-			
+			li1.add("Name");
+		
+			li2.add("Class");
 			
 			while(rs.next())
 			{
@@ -101,8 +103,7 @@ public class Home extends JFrame {
 				li1.add(rs.getString(1));
 				i++;
 				li2.add(rs.getString(2));
-				i++;
-				li2.add(rs.getString(2));
+				
 			}
 		}
 		catch(Exception e)
@@ -118,8 +119,7 @@ public class Home extends JFrame {
 			data1[k][j]=li1.getItem(k);
 			j++;
 			data1[k][j]=li2.getItem(k);
-			j++;
-			data1[k][j]=li2.getItem(k);
+			
 			j=0;
 		}
 		table = new JTable(data1,columnNames);
