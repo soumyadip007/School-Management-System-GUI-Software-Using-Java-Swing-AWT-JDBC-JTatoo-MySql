@@ -136,7 +136,7 @@ public class AdminLogin extends JFrame {
 				{
 					dispose();
 					AdminHome ah=new AdminHome();
-					ah.setTitle("Book Hub");
+					ah.setTitle("Faculty Home");
 					ah.setVisible(true);
 					JOptionPane.showMessageDialog(btnNewButton, "You have successfully logged in");
 				}
