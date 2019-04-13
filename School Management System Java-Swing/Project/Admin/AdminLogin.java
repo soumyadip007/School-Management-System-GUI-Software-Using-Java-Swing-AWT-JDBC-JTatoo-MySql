@@ -33,9 +33,8 @@ public class AdminLogin extends JFrame {
 	private JLabel lblNewLabel_1;
 	private JLabel label;
 	private JLabel label_1;
-	/**
-	 * Launch the application.
-	 */
+
+
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -50,9 +49,7 @@ public class AdminLogin extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public AdminLogin() {
 		//setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Soumyadeep\\Desktop\\Book Hub\\0.jpg"));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
