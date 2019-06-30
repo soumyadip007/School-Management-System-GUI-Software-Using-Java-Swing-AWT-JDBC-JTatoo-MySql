@@ -1,6 +1,5 @@
 package User;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
@@ -21,7 +20,6 @@ import javax.swing.border.EmptyBorder;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 
-import Admin.AdminHome;
 import Admin.AdminLogin;
 
 public class UserLogin extends JFrame {

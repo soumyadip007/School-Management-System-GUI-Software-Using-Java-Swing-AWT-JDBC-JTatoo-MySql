@@ -228,9 +228,6 @@ public class AdminHome extends JFrame {
 		JLabel label = new JLabel("");
 		label.setIcon(new ImageIcon("C:\\Users\\Soumyadeep\\Desktop\\Book Hub\\why-you-should-read-and-re-read-these-high-school-books-as-an-adult (Custom).jpeg"));
 		label.setBounds(0, 26, 1008, 536);
-		contentPane.add(label);
-		
-		
-	
+		contentPane.add(label);	
 	}
 }
