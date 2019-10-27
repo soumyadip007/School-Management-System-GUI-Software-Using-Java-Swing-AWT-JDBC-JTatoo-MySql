@@ -1,23 +1,18 @@
 package Admin;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.List;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.util.Arrays;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.border.EmptyBorder;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
-
-import javax.swing.JButton;
-import javax.swing.JTable;
-import javax.swing.JScrollBar;
 
 public class Home extends JFrame {
 
